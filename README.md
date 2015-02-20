@@ -28,6 +28,16 @@ class ItemsController < ApplicationController
 end
 ```
 
+If you need to paginate the `index` action, simply override the `render_list` method:
+
+```ruby
+class ApplicationController < ActionController::API
+  def render_list(list)
+    render_paginated(list)
+  end
+end
+```
+
 ## Contributing
 
 1. Fork it ( http://github.com/jasonkriss/relaxation/fork )
